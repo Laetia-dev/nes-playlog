@@ -357,3 +357,22 @@ body[data-page="collection"] .museum-tools,body[data-page="archive"] .museum-too
 .series-milestone-icon{font-size:28px!important;line-height:1!important;}
 .mainnav a.hub-return{background:#303b40;color:#ffe0c0;border:1px solid #617277;}
 .mainnav a.hub-return:hover{border-color:#f5aa74;}
+
+/* Version 10: NES / Famicom artifact renderer shared with the central Playlog. */
+.art-wrapper-v10.shelf-pak,.art-wrapper-v10.art-pak{width:94px;height:128px;padding:0!important;border:0!important;border-radius:0!important;background:none!important;box-shadow:none!important;clip-path:none!important;display:flex;align-items:center;justify-content:center;transform:none!important;overflow:visible;flex:none}
+.art-wrapper-v10:before{display:none!important}
+.art-wrapper-v10 .playlog-cartridge{width:92px;height:125px;max-width:none}
+.art-wrapper-v10.shelf-pak .playlog-cartridge{width:86px;height:118px}
+.archive-art:hover .art-wrapper-v10 .playlog-cartridge,.curated-pak:hover .playlog-cartridge{transform:translateY(-5px)}
+html[data-cart-theme="famicom"] .art-wrapper-v10 .playlog-cartridge{height:115px}
+html[data-cart-theme="famicom"] .art-wrapper-v10.shelf-pak .playlog-cartridge{height:104px}
+.series-list-item{grid-template-columns:30px 85px minmax(0,1fr) 147px 108px;gap:10px}
+.series-list-item .art-wrapper-v10.shelf-pak{width:74px;height:96px}
+.series-list-item .art-wrapper-v10 .playlog-cartridge{width:62px;height:85px}
+html[data-cart-theme="famicom"] .series-list-item .art-wrapper-v10 .playlog-cartridge{height:73px}
+.other-version-check{display:flex;flex-direction:column;justify-content:center;gap:10px}
+.other-version-check .inline-choice{display:flex;align-items:center;gap:9px;font:700 11px var(--sans)}
+.other-version-check input{accent-color:var(--coral);width:18px;height:18px}
+@media(max-width:990px){.series-list-item{grid-template-columns:25px 72px minmax(0,1fr) 124px 98px;gap:8px}}
+@media(max-width:690px){.series-list-item{grid-template-columns:24px 65px minmax(0,1fr);gap:9px}.series-list-item .quick-status{grid-column:3;grid-row:2}.series-list-item .series-open{grid-column:3;grid-row:3}.series-list-item .series-no{grid-row:1}.series-list-item .art-wrapper-v10{grid-column:2;grid-row:1 / span 3}}
+@media(max-width:400px){.series-list-item{grid-template-columns:18px 55px minmax(0,1fr);gap:6px}.series-list-item .art-wrapper-v10.shelf-pak{width:58px}}
