@@ -376,3 +376,9 @@ html[data-cart-theme="famicom"] .series-list-item .art-wrapper-v10 .playlog-cart
 @media(max-width:990px){.series-list-item{grid-template-columns:25px 72px minmax(0,1fr) 124px 98px;gap:8px}}
 @media(max-width:690px){.series-list-item{grid-template-columns:24px 65px minmax(0,1fr);gap:9px}.series-list-item .quick-status{grid-column:3;grid-row:2}.series-list-item .series-open{grid-column:3;grid-row:3}.series-list-item .series-no{grid-row:1}.series-list-item .art-wrapper-v10{grid-column:2;grid-row:1 / span 3}}
 @media(max-width:400px){.series-list-item{grid-template-columns:18px 55px minmax(0,1fr);gap:6px}.series-list-item .art-wrapper-v10.shelf-pak{width:58px}}
+
+.achievement-carts{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.achievement-carts .art-wrapper-v10.shelf-pak{width:48px;height:65px}
+.achievement-carts .art-wrapper-v10.shelf-pak .playlog-cartridge{width:45px;height:61px}
+html[data-cart-theme="famicom"] .achievement-carts .art-wrapper-v10.shelf-pak .playlog-cartridge{height:53px}
+.other-version-panel label[hidden]{display:none}
