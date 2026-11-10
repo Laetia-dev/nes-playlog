@@ -1,12 +1,13 @@
 {
-  "name": "NES Playlog — Your 8-Bit Museum",
+  "name": "NES Playlog · 8-Bit Museum and Passport",
   "short_name": "NES Playlog",
-  "start_url": "./",
+  "description": "Your account-free NES and Famicom game museum, collection and trophies.",
+  "id": "./",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#101117",
-  "theme_color": "#171a1b",
-  "description": "An NES and Famicom game museum, checklists, exhibitions, and achievements, no accounts.",
+  "theme_color": "#d13d3b",
   "icons": [
     {
       "src": "./favicon.svg",
