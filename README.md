@@ -1,19 +1,20 @@
-# NES Playlog — Your 8-Bit Museum
+# NES Playlog · Museum Edition v8
 
-An account-free NES and Famicom game collection, exhibitions, series achievements, personal victory goals, filters, optional online art, and a shareable collector card.
+A standalone NES/Famicom museum with four navigable pages:
 
-## Run it
+- Museum: `index.html`, curated exhibitions and series
+- Archive: `archive.html`, game catalog and filters
+- My Collection: `collection.html`, games tried, played, finished, mastered, plus alternate versions
+- Passport & Trophies: `passport.html`, customizable local profile, collection showcase, achievements and read-only visits
 
-Open `index.html` to try it locally, or publish this repository with GitHub Pages.
+No login or backend is required. All progress remains on the visitor's browser via localStorage. Export a private backup before clearing data or moving browsers.
 
-## Publish with GitHub Pages
+## Sharing with friends safely
 
-Visit **Settings → Pages**, select **Deploy from a branch**, choose **main** and **/(root)**, then **Save**. The public URL should be https://laetia-dev.github.io/nes-playlog/ once Pages deployment finishes.
+Use **Export Public Passport** on Passport & Trophies to share your chosen name, bio, game statuses and badges without private notes, dates, ratings or completion goals. Friends can choose **Open Friend's Passport** to see it read-only without replacing their own collection. Do not share private full backups.
 
-## Important
+## GitHub Pages
 
-All checkmarks, goals, and your Player Passport remain stored locally in your browser. Use **Export Backup** to save your progress and **Import Backup** to restore it after changing browser or device. There is no login or remote account system.
+In your repository, use Settings → Pages → Deploy from a branch → main → /(root). Ensure the files are in the repository root. The offline cache updates on HTTPS. Artwork requires internet initially.
 
-Real cover art is loaded from external sources when available. The site falls back to cartridge illustrations. The game catalog is a curated, incomplete worldwide NES/Famicom library, not a complete census.
-
-The file `index.html` contains the site code and game dataset, which keeps the published version easy to host. `sw.js` provides offline caching on HTTPS; `manifest.webmanifest` provides install information.
+Games listed are NES, Famicom or Famicom Disk System originals only; other console versions are tracked as related play memories, not extra NES entries.
