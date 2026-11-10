@@ -1,19 +1,14 @@
 {
-  "name": "NES Playlog · 8-Bit Museum and Passport",
-  "short_name": "NES Playlog",
-  "description": "Your account-free NES and Famicom game museum, collection and trophies.",
+  "name": "Lae's Playlog, Your Personal Gaming History",
+  "short_name": "Lae's Playlog",
+  "description": "One personal collection, console museums, player passport and series achievements, no account required.",
   "id": "./",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#101117",
-  "theme_color": "#d13d3b",
+  "background_color": "#101418",
+  "theme_color": "#bd403b",
   "icons": [
-    {
-      "src": "./favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    }
+    { "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ]
 }
