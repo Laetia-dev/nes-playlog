@@ -46,3 +46,8 @@ main{padding:0 42px 75px}.microbar{display:flex;gap:16px;justify-content:space-b
 
 #profileForm label[hidden]{display:none}
 .avatar.has-cartridge .playlog-cartridge{width:100%;height:100%;transform:none}
+html[data-cart-theme="famicom"] .game-tile .playlog-cartridge{height:94px}
+html[data-cart-theme="famicom"] .shelf-card .playlog-cartridge{height:86px}
+html[data-cart-theme="famicom"] .series-mini-carts .playlog-cartridge{height:38px}
+html[data-cart-theme="famicom"] .avatar.has-cartridge .playlog-cartridge{height:100%}
+.visitor-person .avatar.has-cartridge .playlog-cartridge{transform:none}
