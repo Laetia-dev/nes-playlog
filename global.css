@@ -19,3 +19,27 @@ main{padding:0 42px 75px}.microbar{display:flex;gap:16px;justify-content:space-b
 @media(max-width:730px){.hero,.profile-layout,.share-panel{grid-template-columns:1fr}.hero{min-height:0;padding:26px 0 38px}.hero h1{letter-spacing:-2px}.passport-stage{margin:24px 10px;max-width:none}.metrics{grid-template-columns:repeat(2,1fr)}.series-grid{grid-template-columns:1fr}.console-grid{grid-template-columns:1fr}.shelf-grid,.game-grid,.trophy-grid{grid-template-columns:1fr 1fr}header{padding:14px 18px}.topnav{gap:4px}.topnav a{font-size:9px;padding:9px 7px}.topnav a.console-link{margin-left:0}main{padding:0 17px 50px}.section-head{align-items:start;flex-direction:column;gap:8px}.footer{padding:20px}.profile-layout .form-grid{grid-template-columns:1fr}}
 @media(max-width:480px){.shelf-grid,.game-grid,.trophy-grid,.visitor-grid{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.metric{padding:14px}.metric .value{font-size:30px}.logo{font-size:16px}.topnav{justify-content:flex-start}.topnav a{font-size:8px;padding:8px 7px}.hero h1{font-size:39px}.profile-panel{padding:16px}.trophy-summary{padding:16px}.star{font-size:24px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Version 10: shared artwork, intuitive completion and a proper passport control. */
+.passport-stage{display:block;text-decoration:none;color:inherit;cursor:pointer;transition:transform .18s,border-color .18s}
+.passport-stage:hover,.passport-stage:focus-visible{transform:translateY(-3px);border-color:#f7b684!important}
+.stage-achievement-count{display:flex;gap:12px;align-items:center;margin-top:17px;color:#ffe0a8;font:700 10px var(--mono);letter-spacing:1px}
+.stage-achievement-count strong{font-size:35px;line-height:1;color:#fff3d5}
+.avatar.has-photo,.avatar.has-cartridge{padding:0;overflow:hidden}
+.passport-avatar-photo{height:100%;width:100%;object-fit:cover;display:block}
+.avatar.has-cartridge{display:grid;place-items:center;background:#192226!important}
+.avatar.has-cartridge .playlog-cartridge{transform:scale(.55);transform-origin:center;flex:none}
+.inline-choice{display:flex;gap:10px;align-items:center;font:600 11px var(--sans)}
+.inline-choice input{width:18px;height:18px;accent-color:#d6534c}
+.game-tile .playlog-cartridge{width:80px;height:108px}
+.shelf-card .playlog-cartridge{width:73px;height:99px}
+.series-row{flex-wrap:wrap}
+.series-mini-carts{display:flex;gap:6px;align-items:center;flex-wrap:wrap;width:100%;border-top:1px solid #ffffff16;padding-top:10px}
+.series-mini-carts .playlog-cartridge{width:34px;height:47px}
+.series-mini-carts .playlog-cart-groove,.series-mini-carts .playlog-cart-fallback small{display:none}
+.series-mini-carts .playlog-cart-label{top:12%;left:11%;right:11%;height:70%;border-width:1px}
+.series-mini-carts .playlog-cart-fallback strong{font-size:5px}
+.series-mini-carts .more-carts{font:700 10px var(--mono);color:#b5c7c2}
+.featured-row .playlog-cartridge{width:47px;height:66px}
+@media(max-width:480px){.stage-achievement-count strong{font-size:29px}.series-row{gap:8px}}
+.visitor-person{display:flex;align-items:center;gap:13px}.visitor-person .avatar{width:64px;height:64px}.visitor-person h3{margin:0}.visitor-person .avatar .playlog-cartridge{transform:scale(.44)}
