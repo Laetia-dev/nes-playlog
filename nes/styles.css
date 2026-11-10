@@ -133,7 +133,6 @@ body {
 .achievement-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:-4px 0 24px}
 .achievement-tab{background:#282f32;color:#b5bfc1;border:1px solid #4e5b60;padding:12px 16px;font:900 10px var(--mono);border-radius:2px}
 .achievement-tab.active,.achievement-tab:hover{background:#9f3231;color:white;border-color:#ed7971}
-.series-tile-awards{display:inline-block!important;margin-top:0!important;border:1px solid #7e6863;background:#3a2f2d;padding:4px 7px;color:#f6b7a5!important;font:900 8px var(--mono)!important;letter-spacing:.3px}
 .series-milestones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:21px}
 .series-milestone{display:flex;gap:12px;align-items:center;background:#20292b;border:1px solid #526064;padding:16px;border-radius:2px;min-width:0}
 .series-milestone.earned{background:#42312b;border-color:#bf8f62}
@@ -353,7 +352,6 @@ body[data-page="collection"] .museum-tools,body[data-page="archive"] .museum-too
 @media(max-width:1099px){.topbar{height:auto;min-height:85px;flex-wrap:wrap;padding:20px 0 12px}.mainnav{order:3;width:100%;display:flex;justify-content:space-between;gap:8px;overflow-x:auto;padding-bottom:4px}.mainnav a{white-space:nowrap;font-size:10px!important}}
 
 /* Lae's Playlog: NES is a separate console wing. */
-.series-tile-awards{font-size:17px!important;letter-spacing:5px;color:#e6b767!important;white-space:nowrap;}
 .series-milestone-icon{font-size:28px!important;line-height:1!important;}
 .mainnav a.hub-return{background:#303b40;color:#ffe0c0;border:1px solid #617277;}
 .mainnav a.hub-return:hover{border-color:#f5aa74;}
@@ -382,3 +380,18 @@ html[data-cart-theme="famicom"] .series-list-item .art-wrapper-v10 .playlog-cart
 .achievement-carts .art-wrapper-v10.shelf-pak .playlog-cartridge{width:45px;height:61px}
 html[data-cart-theme="famicom"] .achievement-carts .art-wrapper-v10.shelf-pak .playlog-cartridge{height:53px}
 .other-version-panel label[hidden]{display:none}
+
+/* The franchise index uses neutral selection and gold for completed sets. */
+#series .section-kicker,#series .heading-flower,#series .museum-count-tag{color:#c3ced1}
+#series .museum-count-tag{background:#252e31;border-color:#526063}
+#series .series-tile{background:#242c2f;border-color:#526063}
+#series .series-tile:hover{background:#2c373a;border-color:#87989e}
+#series .series-tile.active{border-color:#c7d8db;box-shadow:inset 0 0 0 1px #c7d8db}
+#series .series-tile:focus-visible{outline:2px solid #f3f5f1;outline-offset:3px}
+#series .series-tile.series-complete{background:#333124;border-color:#918055}
+#series .series-tile.series-complete.active{box-shadow:inset 0 0 0 1px #cdb983;border-color:#cdb983}
+#series .series-detail.series-complete{border-color:#918055;background:linear-gradient(115deg,#332f23,#21272a 72%)}
+#series .series-tile-awards{display:flex;gap:5px;margin-top:auto;line-height:1;font:700 21px/1 var(--sans,system-ui)}
+#series .series-star-earned{color:#f3f5f1}
+#series .series-star-locked{color:#aab9bd}
+#series .series-complete .series-star-earned{color:#f0d99c}
