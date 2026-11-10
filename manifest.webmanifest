@@ -1,0 +1,18 @@
+{
+  "name": "NES Playlog — Your 8-Bit Museum",
+  "short_name": "NES Playlog",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101117",
+  "theme_color": "#171a1b",
+  "description": "An NES and Famicom game museum, checklists, exhibitions, and achievements, no accounts.",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
