@@ -11,7 +11,7 @@ const unique=xs=>[...new Set(xs.filter(Boolean))];
 const seed=(g)=>{let x=0;for(const c of (g.id||g.title||''))x=Math.imul(x,31)+c.charCodeAt(0)|0;return ['#b4574f','#587985','#86674d','#6b678b','#4d827c','#ae7f52'][(x>>>0)%6]};
 function options(g){
  const dir=g.region==='FDS'?FDS:CDN,base=ROOT+encodeURIComponent(dir)+'/Named_Boxarts/';
- const manifest=window.NES_COVER_MANIFEST||{},verified={'Castlevania III: Dracula\'s Curse':["Castlevania III - Dracula's Curse (USA)"],'Final Fantasy III':['Final Fantasy III (Japan)'],'Kirby\'s Adventure':["Kirby's Adventure (USA)"],'Mega Man 2':['Mega Man 2 (USA)'],'Super Mario Bros.':['Super Mario Bros. (World)'],'Super Mario Bros. 3':['Super Mario Bros. 3 (USA) (Rev 1)']},stems=[...(verified[g.title]||[]),...(manifest[g.title]||[])];
+ const stems=[...(window.NES_COVER_MANIFEST?.[g.title]||[])];
  if(g.prototype||g.region==='HOME')return [];
  const rawNames=[g.title,g.title.replace(/: /g,' - '),g.title.replace(/^The (.+)$/,'$1, The'),...(g.aliases||[]).slice(0,2)];
  for(const raw of rawNames){if(!raw)continue;const name=raw.replace(/^The (.+)$/,'$1, The');
@@ -33,7 +33,7 @@ function create(g,opts={}){
  const release=document.createElement('small');release.textContent=(g.year||'198X')+' · 8 BIT';text.append(caption,name,release);label.append(text);cart.append(lip,label);
  if(opts.artwork!==false&&navigator.onLine!==false){const sources=options(g),img=document.createElement('img');img.className='playlog-cover-img';img.alt='';img.loading='lazy';img.decoding='async';img.referrerPolicy='no-referrer';
  let i=0;function next(){while(i<sources.length&&failures.has(sources[i]))i++;if(i>=sources.length){img.remove();return;}img.src=sources[i];}
- img.addEventListener('load',()=>{if(img.naturalWidth>0){label.classList.add('has-artwork');persist(g.id,sources[i]);}});
+ img.addEventListener('load',()=>{if(img.naturalWidth>0){label.classList.add('has-artwork');persist(g.id,sources[i]);opts.onLoad?.(sources[i]);}});
  img.addEventListener('error',()=>{if(sources[i])failures.add(sources[i]);i++;next();});
  if(sources.length){label.append(img);next();}}
  return cart;

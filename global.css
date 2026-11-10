@@ -43,3 +43,11 @@ main{padding:0 42px 75px}.microbar{display:flex;gap:16px;justify-content:space-b
 .featured-row .playlog-cartridge{width:47px;height:66px}
 @media(max-width:480px){.stage-achievement-count strong{font-size:29px}.series-row{gap:8px}}
 .visitor-person{display:flex;align-items:center;gap:13px}.visitor-person .avatar{width:64px;height:64px}.visitor-person h3{margin:0}.visitor-person .avatar .playlog-cartridge{transform:scale(.44)}
+
+#profileForm label[hidden]{display:none}
+.avatar.has-cartridge .playlog-cartridge{width:100%;height:100%;transform:none}
+html[data-cart-theme="famicom"] .game-tile .playlog-cartridge{height:94px}
+html[data-cart-theme="famicom"] .shelf-card .playlog-cartridge{height:86px}
+html[data-cart-theme="famicom"] .series-mini-carts .playlog-cartridge{height:38px}
+html[data-cart-theme="famicom"] .avatar.has-cartridge .playlog-cartridge{height:100%}
+.visitor-person .avatar.has-cartridge .playlog-cartridge{transform:none}
