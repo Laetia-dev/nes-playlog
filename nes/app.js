@@ -246,11 +246,15 @@ function renderExhibitions(){
  const footer=make('div','room-bottom'),button=make('button','btn btn-outline btn-small','BROWSE THIS COLLECTION ↗');button.type='button';button.dataset.filterExhibit=room.id;footer.append(make('span','', 'A game may be displayed in more than one room. Its progress is never duplicated.'),button);panel.append(footer);
 }
 function selectSeries(id){if(!SERIES.some(s=>s.id===id))return;if(document.body.dataset.page!=='museum'){location.href='./index.html#series/'+encodeURIComponent(id);return;}activeSeries=id;renderSeries();if(location.hash!==`#series/${id}`)location.hash=`series/${id}`;else $('series').scrollIntoView({behavior:'smooth'});}
-function renderSeries(){const root=$('seriesNav');root.replaceChildren();for(const series of SERIES){const gs=SERIES_GAMES.get(series.id)||[],cnt=seriesCount(series.id),btn=make('button','series-tile'+(activeSeries===series.id?' active':''));btn.dataset.series=series.id;btn.type='button';btn.setAttribute('aria-pressed',String(activeSeries===series.id));const done=gs.filter(g=>finished(rget(g.id))).length;
+function renderSeries(){const root=$('seriesNav');root.replaceChildren();for(const series of SERIES){const gs=SERIES_GAMES.get(series.id)||[],cnt=seriesCount(series.id),btn=make('button','series-tile'+(activeSeries===series.id?' active':''));btn.dataset.series=series.id;btn.type='button';btn.setAttribute('aria-pressed',String(activeSeries===series.id));const done=seriesFinishedCount(series.id);
+  btn.classList.toggle('series-complete',gs.length>0&&done===gs.length);
   btn.append(make('span','series-tile-deco',series.name.slice(0,2).toUpperCase()),make('strong','',series.name),make('span','',`${cnt} / ${gs.length} played · ${done} completed`));
   const seriesAwards=ACHIEVEMENTS.filter(a=>a.seriesId===series.id),badgeCount=seriesAwards.filter(a=>store.unlocks[a.id]).length;
-  const badge=make('span','series-tile-awards',seriesAwards.map(a=>store.unlocks[a.id]?'★':'☆').join(' '));badge.title=`${badgeCount} / ${seriesAwards.length} unlocked`;badge.setAttribute('aria-label',badge.title);btn.append(badge);root.append(btn);}
+  const badge=make('span','series-tile-awards');
+  for(const award of seriesAwards){const earned=Boolean(store.unlocks[award.id]),star=make('span',earned?'series-star-earned':'series-star-locked',earned?'★':'☆');star.setAttribute('aria-hidden','true');badge.append(star);}
+  badge.setAttribute('role','img');badge.title=`${badgeCount} / ${seriesAwards.length} unlocked`;badge.setAttribute('aria-label',badge.title);btn.append(badge);root.append(btn);}
  const series=SERIES.find(s=>s.id===activeSeries)||SERIES[0],gs=SERIES_GAMES.get(series.id)||[],count=seriesCount(series.id),info=$('seriesDetail');info.replaceChildren();
+ info.classList.toggle('series-complete',gs.length>0&&seriesFinishedCount(series.id)===gs.length);
  const head=make('div','series-detail-head'),summary=make('div');summary.append(make('span','room-eyebrow','FRANCHISE CATALOG  /  '+series.category.toUpperCase()),make('h3','',series.name),make('p','',series.intro));const stats=make('div','room-score');stats.append(make('strong','',`${count} / ${gs.length}`),make('span','', 'GAMES EXPERIENCED'),progressBar(count,gs.length));head.append(summary,stats);info.append(head);
  const milestones=make('div','series-milestones'),awards=ACHIEVEMENTS.filter(a=>a.seriesId===series.id);
  for(const a of awards){const earned=!!store.unlocks[a.id],current=a.get({}),box=make('div','series-milestone'+(earned?' earned':''));
